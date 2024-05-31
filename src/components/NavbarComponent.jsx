@@ -34,6 +34,14 @@ export default function NavbarComponent() {
           >
             Contact
           </Link>
+          <Link
+            to="/users"
+            style={{
+              margin: "0px 20px",
+            }}
+          >
+            Users
+          </Link>
         </Nav>
       </Container>
     </Navbar>
