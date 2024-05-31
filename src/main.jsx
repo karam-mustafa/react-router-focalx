@@ -7,7 +7,7 @@ import Contact from "./pages/Contact.jsx";
 import Home from "./pages/Home.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
-import Users from "./pages/Users.jsx";
+import Posts from "./pages/Posts.jsx";
 
 const router = createBrowserRouter([
   {
@@ -27,8 +27,8 @@ const router = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: "/users",
-        element: <Users />,
+        path: "/posts",
+        element: <Posts />,
       },
     ],
   },

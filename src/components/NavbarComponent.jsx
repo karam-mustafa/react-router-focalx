@@ -35,12 +35,12 @@ export default function NavbarComponent() {
             Contact
           </Link>
           <Link
-            to="/users"
+            to="/posts"
             style={{
               margin: "0px 20px",
             }}
           >
-            Users
+            Posts
           </Link>
         </Nav>
       </Container>

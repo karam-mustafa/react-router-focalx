@@ -2,33 +2,33 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 
-export default function Users() {
-  const [users, setUsers] = useState([]);
+export default function Posts() {
+  const [posts, setPosts] = useState([]);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
 
-  const addNewUser = () => {
+  const addNewPost = () => {
     axios
       .post("https://jsonplaceholder.typicode.com/posts", {
         title: title,
         body: body,
-        userId: 1,
+        postId: 1,
       })
       .then((res) => {
-        setUsers([...users, res.data]);
+        setPosts([...posts, res.data]);
       });
   };
 
   useEffect(() => {
     axios.get("https://jsonplaceholder.typicode.com/posts").then((res) => {
-      setUsers(res.data);
+      setPosts(res.data);
     });
   }, []);
 
   return (
     <Container>
       <Row className="my-4">
-        {users.map((item) => {
+        {posts.map((item) => {
           return (
             <Col className="my-2" lg={4} md={6} sm={12}>
               <Card>
@@ -47,7 +47,7 @@ export default function Users() {
       <br />
       <input onChange={(e) => setBody(e.target.value)} placeholder="body" />
 
-      <Button variant="primary" onClick={() => addNewUser()}>
+      <Button variant="primary" onClick={() => addNewPost()}>
         Add new post
       </Button>
     </Container>
